@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Tag Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+        }
+        .example {
+            background: #f4f4f4;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        code {
+            background: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Audio Tag Examples</h1>
+    
+    <h2>1. Basic Audio with Controls</h2>
+    <div class="example">
+        <audio controls>
+            <source src="audio/sample.mp3" type="audio/mpeg">
+            <source src="audio/sample.ogg" type="audio/ogg">
+            <source src="audio/sample.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+        <p><strong>Note:</strong> Multiple sources ensure compatibility across different browsers. MP3, OGG, and WAV formats are included.</p>
+    </div>
+
+    <h2>2. Audio with Autoplay and Loop</h2>
+    <div class="example">
+        <audio controls loop>
+            <source src="audio/background-music.mp3" type="audio/mpeg">
+            <source src="audio/background-music.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+        <p><strong>Note:</strong> The <code>loop</code> attribute makes the audio repeat. Autoplay is often blocked by browsers for user experience.</p>
+    </div>
+
+    <h2>3. Audio with Preload Settings</h2>
+    <div class="example">
+        <audio controls preload="metadata">
+            <source src="audio/podcast.mp3" type="audio/mpeg">
+            <source src="audio/podcast.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+        <p><strong>Note:</strong> <code>preload="metadata"</code> loads only metadata (duration, etc.) to save bandwidth. Options: none, metadata, auto.</p>
+    </div>
+
+    <h2>4. Multiple Audio Files</h2>
+    <div class="example">
+        <h3>Track 1: Introduction</h3>
+        <audio controls>
+            <source src="audio/track1.mp3" type="audio/mpeg">
+            <source src="audio/track1.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <h3>Track 2: Main Content</h3>
+        <audio controls>
+            <source src="audio/track2.mp3" type="audio/mpeg">
+            <source src="audio/track2.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <h3>Track 3: Conclusion</h3>
+        <audio controls>
+            <source src="audio/track3.mp3" type="audio/mpeg">
+            <source src="audio/track3.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+        <p><strong>Note:</strong> Each audio element is independent with its own playback controls.</p>
+    </div>
+
+    <h2>Browser Compatibility Notes</h2>
+    <ul>
+        <li><strong>MP3:</strong> Widely supported across all modern browsers (Chrome, Firefox, Safari, Edge)</li>
+        <li><strong>OGG:</strong> Supported by Chrome, Firefox, Opera (not Safari or IE)</li>
+        <li><strong>WAV:</strong> Supported by most browsers but file sizes are larger</li>
+        <li><strong>AAC:</strong> Good support in Safari and Edge, limited in Firefox</li>
+        <li>Always provide multiple formats for maximum compatibility</li>
+        <li>Use fallback text for browsers that don't support the audio element</li>
+    </ul>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Always include the <code>controls</code> attribute to let users control playback</li>
+        <li>Provide multiple source formats for better browser support</li>
+        <li>Include fallback text for older browsers</li>
+        <li>Avoid autoplay to respect user preference</li>
+        <li>Use <code>preload="metadata"</code> to optimize page load times</li>
+        <li>Consider accessibility by providing transcripts for important audio content</li>
+    </ul>
+</body>
+</html>
