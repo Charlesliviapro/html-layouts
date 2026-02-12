@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Column Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Main Content Styles */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        article {
+            margin-bottom: 3rem;
+        }
+
+        article h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        article p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        section h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Site Header -->
+    <header>
+        <div class="container">
+            <h1>One-Column Layout</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <article>
+            <h2>Welcome to Our Single Column Layout</h2>
+            <p>
+                This is a simple, clean one-column layout that focuses on content readability. 
+                It's perfect for blogs, articles, and mobile-first designs where the primary 
+                goal is to present information in a clear, distraction-free manner.
+            </p>
+            <p>
+                The single-column approach ensures that your content is easy to read on any 
+                device, from large desktop monitors to small mobile screens. This layout naturally 
+                adapts to different screen sizes without complex responsive design patterns.
+            </p>
+        </article>
+
+        <section id="about">
+            <h3>About This Layout</h3>
+            <p>
+                This layout uses semantic HTML5 elements to structure the page. The header contains 
+                site branding and navigation, the main element contains the primary content, and the 
+                footer provides additional information and links.
+            </p>
+            <p>
+                Semantic elements improve accessibility, SEO, and code maintainability by clearly 
+                defining the purpose of each section of the page.
+            </p>
+        </section>
+
+        <article>
+            <h2>Key Features</h2>
+            <p>
+                One-column layouts offer several advantages:
+            </p>
+            <ul style="margin-left: 2rem; color: #555;">
+                <li>Excellent readability with optimal line length</li>
+                <li>Natural mobile responsiveness</li>
+                <li>Clear content hierarchy</li>
+                <li>Minimal distractions for users</li>
+                <li>Easy to maintain and update</li>
+            </ul>
+        </article>
+
+        <section id="services">
+            <h3>Use Cases</h3>
+            <p>
+                This layout pattern works best for:
+            </p>
+            <ul style="margin-left: 2rem;">
+                <li>Blog posts and articles</li>
+                <li>Portfolio pages</li>
+                <li>Documentation</li>
+                <li>Simple landing pages</li>
+                <li>Mobile-first applications</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 One-Column Layout. All rights reserved.</p>
+            <p>
+                <a href="#privacy">Privacy Policy</a> | 
+                <a href="#terms">Terms of Service</a> | 
+                <a href="#contact">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
