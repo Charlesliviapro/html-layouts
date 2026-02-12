@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Tag Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #FF9800;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+        }
+        .example {
+            background: #f4f4f4;
+            border-left: 4px solid #FF9800;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        code {
+            background: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        picture {
+            display: block;
+            margin: 15px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Picture Tag Examples</h1>
+    
+    <h2>1. Responsive Images with Different Resolutions</h2>
+    <div class="example">
+        <picture>
+            <source media="(min-width: 1200px)" srcset="images/hero-large.jpg">
+            <source media="(min-width: 768px)" srcset="images/hero-medium.jpg">
+            <source media="(min-width: 480px)" srcset="images/hero-small.jpg">
+            <img src="images/hero-default.jpg" alt="Hero banner image showing a beautiful landscape">
+        </picture>
+        <p><strong>Note:</strong> Different image sizes are served based on viewport width, optimizing load time and quality for each device.</p>
+    </div>
+
+    <h2>2. Art Direction - Different Images for Different Screens</h2>
+    <div class="example">
+        <picture>
+            <source media="(min-width: 1024px)" srcset="images/banner-desktop.jpg">
+            <source media="(min-width: 768px)" srcset="images/banner-tablet.jpg">
+            <img src="images/banner-mobile.jpg" alt="Product banner with call-to-action">
+        </picture>
+        <p><strong>Note:</strong> Art direction allows completely different images (not just resized versions) for different screen sizes.</p>
+    </div>
+
+    <h2>3. Modern Image Formats with Fallbacks</h2>
+    <div class="example">
+        <picture>
+            <source type="image/avif" srcset="images/photo.avif">
+            <source type="image/webp" srcset="images/photo.webp">
+            <source type="image/jpeg" srcset="images/photo.jpg">
+            <img src="images/photo.jpg" alt="A scenic photograph of mountains at sunset">
+        </picture>
+        <p><strong>Note:</strong> Browsers use the first format they support. AVIF offers best compression, WebP is widely supported, JPEG is the fallback.</p>
+    </div>
+
+    <h2>4. High DPI/Retina Display Support</h2>
+    <div class="example">
+        <picture>
+            <source srcset="images/logo@2x.png 2x, images/logo@3x.png 3x" type="image/png">
+            <img src="images/logo.png" alt="Company logo">
+        </picture>
+        <p><strong>Note:</strong> The <code>2x</code> and <code>3x</code> descriptors provide higher resolution images for retina displays.</p>
+    </div>
+
+    <h2>5. Combining Media Queries with Image Formats</h2>
+    <div class="example">
+        <picture>
+            <source media="(min-width: 1024px)" type="image/webp" srcset="images/product-large.webp">
+            <source media="(min-width: 1024px)" type="image/jpeg" srcset="images/product-large.jpg">
+            <source media="(min-width: 768px)" type="image/webp" srcset="images/product-medium.webp">
+            <source media="(min-width: 768px)" type="image/jpeg" srcset="images/product-medium.jpg">
+            <source type="image/webp" srcset="images/product-small.webp">
+            <img src="images/product-small.jpg" alt="Product showcase image">
+        </picture>
+        <p><strong>Note:</strong> This combines responsive sizing with modern format support for optimal performance.</p>
+    </div>
+
+    <h2>6. Pixel Density and Width Descriptors</h2>
+    <div class="example">
+        <picture>
+            <source srcset="images/gallery-400.jpg 400w,
+                            images/gallery-800.jpg 800w,
+                            images/gallery-1200.jpg 1200w,
+                            images/gallery-1600.jpg 1600w"
+                    sizes="(min-width: 1024px) 800px,
+                           (min-width: 768px) 600px,
+                           100vw">
+            <img src="images/gallery-800.jpg" alt="Gallery image of modern architecture">
+        </picture>
+        <p><strong>Note:</strong> The browser selects the best image based on viewport size and pixel density using the <code>sizes</code> attribute.</p>
+    </div>
+
+    <h2>7. Orientation-Based Images</h2>
+    <div class="example">
+        <picture>
+            <source media="(orientation: landscape)" srcset="images/landscape-view.jpg">
+            <source media="(orientation: portrait)" srcset="images/portrait-view.jpg">
+            <img src="images/default-view.jpg" alt="Adaptive image based on device orientation">
+        </picture>
+        <p><strong>Note:</strong> Different images can be served based on device orientation (landscape vs. portrait).</p>
+    </div>
+
+    <h2>8. Dark Mode Support</h2>
+    <div class="example">
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="images/logo-dark.png">
+            <source media="(prefers-color-scheme: light)" srcset="images/logo-light.png">
+            <img src="images/logo-light.png" alt="Company logo that adapts to dark mode">
+        </picture>
+        <p><strong>Note:</strong> Images can adapt to the user's color scheme preference (dark mode or light mode).</p>
+    </div>
+
+    <h2>Image Format Support</h2>
+    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+        <thead>
+            <tr style="background: #FF9800; color: white;">
+                <th>Format</th>
+                <th>MIME Type</th>
+                <th>Browser Support</th>
+                <th>Advantages</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>AVIF</strong></td>
+                <td>image/avif</td>
+                <td>Chrome 85+, Firefox 93+, Safari 16+</td>
+                <td>Best compression, smallest files</td>
+            </tr>
+            <tr>
+                <td><strong>WebP</strong></td>
+                <td>image/webp</td>
+                <td>Chrome, Firefox, Edge, Safari 14+</td>
+                <td>Excellent compression, wide support</td>
+            </tr>
+            <tr>
+                <td><strong>JPEG</strong></td>
+                <td>image/jpeg</td>
+                <td>Universal support</td>
+                <td>Universal fallback, good for photos</td>
+            </tr>
+            <tr>
+                <td><strong>PNG</strong></td>
+                <td>image/png</td>
+                <td>Universal support</td>
+                <td>Transparency support, lossless</td>
+            </tr>
+            <tr>
+                <td><strong>SVG</strong></td>
+                <td>image/svg+xml</td>
+                <td>Universal support</td>
+                <td>Scalable, small file size for graphics</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Srcset Descriptors</h2>
+    <ul>
+        <li><strong>Width descriptor (w):</strong> Tells the browser the actual width of the image file (e.g., <code>image-800.jpg 800w</code>)</li>
+        <li><strong>Pixel density descriptor (x):</strong> Specifies the pixel density (e.g., <code>image-2x.jpg 2x</code> for retina displays)</li>
+        <li><strong>sizes attribute:</strong> Tells the browser how much space the image will take up (used with width descriptors)</li>
+    </ul>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Always include an <code>&lt;img&gt;</code> tag as the fallback inside <code>&lt;picture&gt;</code></li>
+        <li>Place the most specific source first and fallback last</li>
+        <li>Use modern formats (AVIF, WebP) with JPEG/PNG fallbacks for better performance</li>
+        <li>Provide multiple resolutions to optimize for different screen sizes</li>
+        <li>Always include descriptive <code>alt</code> text on the <code>&lt;img&gt;</code> element</li>
+        <li>Consider art direction - serve different crops or compositions for different viewports</li>
+        <li>Test across different browsers and devices</li>
+        <li>Use appropriate image compression to balance quality and file size</li>
+        <li>Combine media queries with type queries for maximum flexibility</li>
+        <li>Consider lazy loading for images below the fold (add <code>loading="lazy"</code> to img)</li>
+    </ul>
+
+    <h2>Common Use Cases</h2>
+    <ul>
+        <li><strong>Responsive images:</strong> Serve different sized images for different screen widths</li>
+        <li><strong>Art direction:</strong> Show different image compositions on mobile vs desktop</li>
+        <li><strong>Format optimization:</strong> Serve modern formats to supporting browsers</li>
+        <li><strong>Retina displays:</strong> Provide high-resolution images for high-DPI screens</li>
+        <li><strong>Dark mode:</strong> Switch images based on user's color scheme preference</li>
+        <li><strong>Orientation:</strong> Adapt images for landscape vs portrait orientation</li>
+    </ul>
+</body>
+</html>

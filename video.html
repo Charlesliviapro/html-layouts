@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Tag Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+        }
+        .example {
+            background: #f4f4f4;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        code {
+            background: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Video Tag Examples</h1>
+    
+    <h2>1. Basic Video with Multiple Sources and Poster</h2>
+    <div class="example">
+        <video controls width="640" height="360" poster="images/video-poster.jpg">
+            <source src="video/sample.mp4" type="video/mp4">
+            <source src="video/sample.webm" type="video/webm">
+            <source src="video/sample.ogv" type="video/ogg">
+            <track src="captions/sample-en.vtt" kind="subtitles" srclang="en" label="English" default>
+            <track src="captions/sample-es.vtt" kind="subtitles" srclang="es" label="Spanish">
+            Your browser does not support the video tag.
+        </video>
+        <p><strong>Note:</strong> Multiple source formats ensure maximum compatibility. The poster image displays before playback starts.</p>
+    </div>
+
+    <h2>2. Video with Captions and Multiple Track Types</h2>
+    <div class="example">
+        <video controls width="640" height="360" poster="images/tutorial-poster.jpg">
+            <source src="video/tutorial.mp4" type="video/mp4">
+            <source src="video/tutorial.webm" type="video/webm">
+            <track src="captions/tutorial-en.vtt" kind="subtitles" srclang="en" label="English Subtitles" default>
+            <track src="captions/tutorial-fr.vtt" kind="subtitles" srclang="fr" label="French Subtitles">
+            <track src="captions/tutorial-descriptions.vtt" kind="descriptions" srclang="en" label="Audio Descriptions">
+            <track src="captions/tutorial-chapters.vtt" kind="chapters" srclang="en" label="Chapters">
+            Your browser does not support the video tag.
+        </video>
+        <p><strong>Note:</strong> Different track kinds serve different purposes: subtitles, descriptions, chapters, and captions.</p>
+    </div>
+
+    <h2>3. Video with Preload and Custom Dimensions</h2>
+    <div class="example">
+        <video controls width="800" height="450" poster="images/presentation-poster.jpg" preload="metadata">
+            <source src="video/presentation.mp4" type="video/mp4">
+            <source src="video/presentation.webm" type="video/webm">
+            <track src="captions/presentation-en.vtt" kind="captions" srclang="en" label="English Captions" default>
+            Your browser does not support the video tag.
+        </video>
+        <p><strong>Note:</strong> <code>preload="metadata"</code> loads only essential information, saving bandwidth until the user plays the video.</p>
+    </div>
+
+    <h2>4. Responsive Video</h2>
+    <div class="example">
+        <video controls style="width: 100%; height: auto;" poster="images/responsive-poster.jpg">
+            <source src="video/responsive.mp4" type="video/mp4">
+            <source src="video/responsive.webm" type="video/webm">
+            <track src="captions/responsive-en.vtt" kind="subtitles" srclang="en" label="English" default>
+            Your browser does not support the video tag.
+        </video>
+        <p><strong>Note:</strong> Using percentage width makes the video responsive to different screen sizes.</p>
+    </div>
+
+    <h2>5. Video with Loop and Muted</h2>
+    <div class="example">
+        <video controls loop muted width="640" height="360" poster="images/background-poster.jpg">
+            <source src="video/background-video.mp4" type="video/mp4">
+            <source src="video/background-video.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <p><strong>Note:</strong> The <code>muted</code> attribute is often required for autoplay to work. The <code>loop</code> attribute makes the video repeat.</p>
+    </div>
+
+    <h2>Video Format Compatibility</h2>
+    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+        <thead>
+            <tr style="background: #2196F3; color: white;">
+                <th>Format</th>
+                <th>MIME Type</th>
+                <th>Browser Support</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>MP4 (H.264)</strong></td>
+                <td>video/mp4</td>
+                <td>Chrome, Firefox, Safari, Edge, IE9+</td>
+                <td>Most widely supported format</td>
+            </tr>
+            <tr>
+                <td><strong>WebM (VP8/VP9)</strong></td>
+                <td>video/webm</td>
+                <td>Chrome, Firefox, Opera, Edge</td>
+                <td>Open source, good compression</td>
+            </tr>
+            <tr>
+                <td><strong>Ogg (Theora)</strong></td>
+                <td>video/ogg</td>
+                <td>Chrome, Firefox, Opera</td>
+                <td>Open source, older format</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Caption Track Formats (WebVTT)</h2>
+    <div class="example">
+        <h3>WebVTT File Example (sample-en.vtt):</h3>
+        <pre style="background: #fff; padding: 10px; border: 1px solid #ddd;">WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+Welcome to our video tutorial.
+
+00:00:05.000 --> 00:00:10.000
+Today we'll learn about HTML5 video elements.
+
+00:00:10.000 --> 00:00:15.000
+Let's get started with the basics.</pre>
+        <p><strong>Note:</strong> WebVTT (Web Video Text Tracks) is the standard format for captions and subtitles.</p>
+    </div>
+
+    <h2>Track Kind Types</h2>
+    <ul>
+        <li><strong>subtitles:</strong> Translation of dialogue (for foreign language content)</li>
+        <li><strong>captions:</strong> Transcription of dialogue and sound effects (for deaf/hard of hearing)</li>
+        <li><strong>descriptions:</strong> Text descriptions of visual content (for blind/low vision users)</li>
+        <li><strong>chapters:</strong> Chapter titles for navigation</li>
+        <li><strong>metadata:</strong> Additional information not displayed to users</li>
+    </ul>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Always provide multiple video formats (MP4 and WebM minimum) for browser compatibility</li>
+        <li>Include a poster image to display before the video loads</li>
+        <li>Add caption tracks for accessibility (required by many accessibility standards)</li>
+        <li>Use the <code>controls</code> attribute to provide playback controls</li>
+        <li>Set appropriate width and height to prevent layout shifts</li>
+        <li>Use <code>preload="metadata"</code> for better performance</li>
+        <li>Provide fallback text for browsers that don't support video</li>
+        <li>Consider bandwidth - compress videos appropriately</li>
+        <li>Test captions across different browsers</li>
+        <li>Always include the <code>default</code> attribute on one track to ensure captions load automatically</li>
+    </ul>
+</body>
+</html>
